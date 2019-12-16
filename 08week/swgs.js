@@ -170,6 +170,7 @@ const swags = function()
       if (questions[i]) {
         // questions[i] = questions[i++]; 
         let currentQuestion = questions[i].q;
+        answer.pop();
         answer.push(questions[i].a)
         return questionReset(currentQuestion)
       } else {
@@ -190,16 +191,17 @@ const swags = function()
 
   // guessResult = document.getElementById("answer").addEventListener("submit", playerGuess); 
   playerGuess = function() {
-    if(document.getElementById('input').value === swags.answer[-1]) {
-      // alert('The Force is strong with you, padawan')
+    let guess = document.getElementById('answer').value;
+    if(guess === answer) {
+      alert('The Force is strong with you, padawan')
       // document.getElementById("answer").color = 'green';
-      document.getElementById("board").innerHTML = 'The Force is strong with you, padawan';
+      // document.getElementById("board").innerHTML = 'The Force is strong with you, padawan';
     } else {
       alert('The Force eludes you')
       // document.getElementById("answer").color = 'green';
-      document.getElementById("board").innerHTML = 'The Force eludes you'; 
+      // document.getElementById("board").innerHTML = 'The Force eludes you'; 
     }
-     return
+     nextQuestion()
   };
   checkForWin = function() {
     if (player1.score > player2.score) {
