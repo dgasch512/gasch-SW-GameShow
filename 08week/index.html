@@ -1,0 +1,49 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<link rel="stylesheet" href="./styles.css">
+  <title>Star Wars Game Show</title>
+</head>
+<body>
+
+  <div class="game-wrapper">
+
+  <h1 class="title">Star Wars Game Show</h1>
+  <h4 class="subtitle">Where the questions require use of the force and the quid don't matter</h4>
+
+  <main class="game">
+    <div class="scoreboard">
+      <div class="player1">
+        <h4 class="name name-1">Player One</h4>
+        <div class="score score-1">0</div>
+      </div>
+      <div class="menu">
+        <button  onclick="startGame()" action="./swgs.js" id="new-game">New Game</button>
+        <button action="./swgs.js" onclick= "resetGame" class="reset" >Reset</button>
+        <button id="reset" action="./swgs.js">Next Question</button>
+      </div>
+      <div class="player2">
+          <h4 class="name name-2">Player Two</h4>
+          <div class="score score-2">0</div>
+      </div>
+    </div>
+    <div id="board">
+      <div id="question">Question: </div>
+      <div>
+        <form id='answer' onsubmit="playerGuess()">
+          Answer: <input type="text" id="input" >
+          <br>
+          <input type="submit" value="Submit" >
+      </form>
+      </div>
+    </div>
+
+
+  </main>
+</div>
+  <script src="./swgs.js"></script>
+</body>
+</html>
